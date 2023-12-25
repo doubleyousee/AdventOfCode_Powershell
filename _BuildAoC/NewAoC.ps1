@@ -1,5 +1,5 @@
 $AoCYear = Read-Host -Prompt "Please enter the Year"
-$RootPath = "..\AdventOfCode$AocYear"
+$RootPath = "$($PSScriptRoot | Split-Path -Parent)\AdventOfCode$AocYear"
 If(!(Test-Path -Path $RootPath)){
     New-Item -Path $RootPath -ItemType Directory
 }
