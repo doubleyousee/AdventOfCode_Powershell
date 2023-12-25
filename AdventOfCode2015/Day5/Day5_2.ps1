@@ -1,4 +1,4 @@
-$PuzzleData = Get-Content -Path C:\Users\willc\OneDrive\Repos\Powershell\AdventOfCode2015\Day5\PuzzleInput_Day5.txt
+$PuzzleData = Get-Content -Path "$PSScriptRoot\PuzzleInput_Day5.txt"
 $Results = [System.Collections.Generic.List[object]]::new()
 $RegexA = '([a-z][a-z])[a-z]*\1'
 $RegexB = '([a-z])[a-z]\1' 

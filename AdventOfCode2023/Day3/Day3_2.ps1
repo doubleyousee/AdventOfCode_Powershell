@@ -8,7 +8,7 @@ Function Get-EngineParts {
     }
     process {
         $left=0;
-        $NumbersInLine = $Line -split '([\d]+)|(\.+)|([^\d\.])' -ne '' |% {
+        $NumbersInLine = $Line -split '([\d]+)|(\.+)|([^\d\.])' -ne '' | ForEach-Object {
             [string]$token = $_
             Switch -Regex ($_) {
                 '\d+' { @{
@@ -29,7 +29,7 @@ Function Get-EngineParts {
     end {
         $SumGears = 0
         $SumNumbers = 0
-        $Tokens |% {
+        $Tokens |ForEach-Object {
             $l,$r,$t,$b = ($_.left -1), ($_.left +1), ($_.top -1), ($_.top +1)
             if($t -lt 0) {$t=0}
             if($b -eq $Numbers.Count) {$b-=1}
@@ -37,11 +37,11 @@ Function Get-EngineParts {
             $GearValue=1
             $NumGears=0;
 
-            $Numbers[$t..$b] | % {$_} |
-                ? { ($_.right -le $r -and $_.right -ge $l) -or
+            $Numbers[$t..$b] | ForEach-Object {$_} |
+                Where-Object { ($_.right -le $r -and $_.right -ge $l) -or
                     ($_.left -le $r -and $_.left -ge $l)
                 } |
-                % {
+                ForEach-Object {
                     $SumNumbers += $_.Number
                     If(++$NumGears -le 2) {$GearValue *= $_.Number }
                 }
@@ -65,4 +65,4 @@ $Demo = @"
 "@
 $Demo -split '\r\n' | Get-EngineParts
 
-Get-Content -Path "C:\Users\willc\OneDrive\Repos\Powershell\AdventOfCode2023\Day3\PuzzleInput_Day3.txt" | Get-EngineParts
+Get-Content -Path "$PSScriptRoot\PuzzleInput_Day3.txt" | Get-EngineParts

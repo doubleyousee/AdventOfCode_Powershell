@@ -1,5 +1,5 @@
 #12 Red, 13 Green, 14 blue
-$PuzzleData = Get-Content -Path "C:\Users\willc\OneDrive\Repos\Powershell\AdventOfCode2023\Day2\PuzzleInput_Day2.txt"
+$PuzzleData = Get-Content -Path "$PSScriptRoot\PuzzleInput_Day2.txt"
 $Sum = 0
 ForEach($Game in $PuzzleData){
     $GameData = [PSCustomObject]@{

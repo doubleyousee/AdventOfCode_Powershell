@@ -1,4 +1,4 @@
-$PuzzleData = Get-Content -Path C:\Users\willc\OneDrive\Repos\Powershell\AdventOfCode2015\Day3\PuzzleInput_Day3.txt
+$PuzzleData = Get-Content -Path "$PSScriptRoot\PuzzleInput_Day3.txt"
 $x=0
 $y=0
 $HouseList = [System.Collections.Generic.List[string]]::new()

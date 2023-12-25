@@ -1,7 +1,7 @@
 [System.Collections.ArrayList]$Folders = @()
 $CurrentFolder = ""
 
-foreach ($Line in  Get-Content -Path $PSScriptRoot\Day7_NoSpaceLeftOnDevice.input) {
+foreach ($Line in  Get-Content -Path "$PSScriptRoot\Day7_NoSpaceLeftOnDevice.input") {
     if ($Line.StartsWith("$ cd")) {
         $CommandArray = $Line.Split(" ")
 

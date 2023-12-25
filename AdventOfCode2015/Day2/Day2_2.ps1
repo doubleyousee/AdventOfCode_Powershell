@@ -1,4 +1,4 @@
-$PuzzleData = Get-Content -Path C:\Users\willc\OneDrive\Repos\Powershell\AdventOfCode2015\Day2\PuzzleInput_Day2.txt
+$PuzzleData = Get-Content -Path "$PSScriptRoot\PuzzleInput_Day2.txt"
 $Order = 0
 ForEach($Box in $PuzzleData){
     $Measurements = $Box.Split("x")

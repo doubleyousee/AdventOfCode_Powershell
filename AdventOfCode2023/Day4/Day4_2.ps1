@@ -1,4 +1,4 @@
-$PuzzleData = Get-Content -Path C:\Users\willc\OneDrive\Repos\Powershell\AdventOfCode2023\Day4\PuzzleInput_Day4.txt
+$PuzzleData = Get-Content -Path "$PSScriptRoot\PuzzleInput_Day4.txt"
 $CardReport = [System.Collections.Generic.List[Object]]::new()
 ForEach($Card in $PuzzleData){
     $CardData = [PSCustomObject]@{

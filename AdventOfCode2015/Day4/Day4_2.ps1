@@ -1,4 +1,4 @@
-$PuzzleData = Get-Content -Path C:\Users\willc\OneDrive\Repos\Powershell\AdventOfCode2015\Day4\PuzzleInput_Day4.txt
+$PuzzleData = Get-Content -Path "$PSScriptRoot\PuzzleInput_Day4.txt"
 $Number = 0
 $Answer = 0
 While($Answer -eq 0){
