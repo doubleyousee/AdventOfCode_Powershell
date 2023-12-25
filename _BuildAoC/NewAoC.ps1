@@ -7,7 +7,8 @@ If(!(Test-Path -Path $RootPath)){
     If(!(Test-Path -Path "$RootPath\Day$_")){
         New-Item -Path "$RootPath\Day$_" -ItemType Directory
         $PuzzleInputFilePath = "$RootPath\Day$_\PuzzleInput_Day$($_).txt"
-        $Line1 = '$PuzzleData = Get-Content -Path ' + $PuzzleInputFilePath
+        $PuzzleInputFilePathString = ("`"`$PSScriptRoot\PuzzleInput_Day$($_).txt`" ").Trim()
+        $Line1 = '$PuzzleData = Get-Content -Path ' + $PuzzleInputFilePathString
         New-Item -Path $PuzzleInputFilePath -ItemType File
         New-Item -Path "$RootPath\Day$_\Day$($_)_1.ps1" -ItemType File
         Add-Content -Path "$RootPath\Day$_\Day$($_)_1.ps1" -Value $Line1
