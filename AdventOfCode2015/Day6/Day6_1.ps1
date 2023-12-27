@@ -1,3 +1,4 @@
+##Warning, this powershell code will take ~30-40 hours to complete, at best.
 $PuzzleData = Get-Content -Path "$PSScriptRoot\PuzzleInput_Day6.txt"
 $LightingArray = [ordered]@{}
 ForEach($x in 0..999){
