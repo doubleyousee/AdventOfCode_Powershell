@@ -1,1 +1,1 @@
-$PuzzleData = Get-Content -Path "$PSScriptRoot\PuzzleInput_Day12.txt"
+$PuzzleData = Get-Content -Path "$PSScriptRoot\PuzzleInput_Day12.txt" | ConvertFrom-JSON
